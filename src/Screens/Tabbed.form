@@ -82,17 +82,23 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
+                      <Table columnCount="4" rowCount="7">
                         <Column editable="true" title="Kode Pesawat" type="java.lang.String">
                           <Data value="PKCJC"/>
                           <Data value="PKCJD"/>
                           <Data value="PKCJE"/>
                           <Data value="PXAXO"/>
+                          <Data value="PXGKO"/>
+                          <Data value="PXBHO"/>
+                          <Data value="PKLCO"/>
                         </Column>
                         <Column editable="true" title="Nama" type="java.lang.String">
                           <Data value="Boeing 737-300"/>
                           <Data value="Boeing 737-500"/>
                           <Data value="Boeing 737-800"/>
+                          <Data value="Airbus A320-200"/>
+                          <Data value="Airbus A320-200"/>
+                          <Data value="Boeing 737-300"/>
                           <Data value="Airbus A320-200"/>
                         </Column>
                         <Column editable="true" title="Kapasitas" type="java.lang.Integer">
@@ -100,12 +106,18 @@
                           <Data value="140"/>
                           <Data value="189"/>
                           <Data value="180"/>
+                          <Data value="180"/>
+                          <Data value="149"/>
+                          <Data value="180"/>
                         </Column>
                         <Column editable="true" title="Maskapai" type="java.lang.String">
                           <Data value="Sriwijaya Air"/>
                           <Data value="Sriwijaya Air"/>
                           <Data value="Sriwijaya Air"/>
                           <Data value="AirAsia"/>
+                          <Data value="Garuda Indonesia"/>
+                          <Data value="Batik Air"/>
+                          <Data value="Lion Air"/>
                         </Column>
                       </Table>
                     </Property>
@@ -177,16 +189,22 @@
                 <Component class="javax.swing.JTable" name="jTable2">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="3">
+                      <Table columnCount="2" rowCount="6">
                         <Column editable="true" title="Kode Maskapai" type="java.lang.String">
                           <Data value="A001"/>
                           <Data value="A002"/>
+                          <Data value="B001"/>
+                          <Data value="G001"/>
+                          <Data value="L001"/>
                           <Data value="S001"/>
                         </Column>
                         <Column editable="true" title="Nama" type="java.lang.String">
                           <Data value="AirAsia"/>
                           <Data value="Airfest Indonesia"/>
-                          <Data value="null"/>
+                          <Data value="Batik Air"/>
+                          <Data value="Garuda Indonesia"/>
+                          <Data value="Lion Air"/>
+                          <Data value="Sriwijaya Air"/>
                         </Column>
                       </Table>
                     </Property>

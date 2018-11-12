@@ -37,7 +37,7 @@ public class Login extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        comboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
@@ -67,8 +67,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 102, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hasbi\\Downloads\\Plane-Download-PNG.png")); // NOI18N
 
-        jCheckBox1.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        jCheckBox1.setText("Ingat Selalu");
+        comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guest", "Admin" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,14 +83,13 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(93, 93, 93))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2)
-                                .addComponent(txtUsername)
-                                .addComponent(jLabel3)
-                                .addComponent(txtPassword)
-                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2)
+                            .addComponent(txtUsername)
+                            .addComponent(jLabel3)
+                            .addComponent(txtPassword)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(comboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(106, 106, 106))))
         );
         layout.setVerticalGroup(
@@ -109,11 +107,11 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnLogin)
-                .addGap(44, 44, 44))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -122,16 +120,22 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String username = txtUsername.getText();
         String password = txtPassword.getText();
+        int level = comboBox.getSelectedIndex();
         
-        if(username.equals("fannyhasbi") && password.equals("hasbi12345")){
-            Tabbed tab = new Tabbed();
+        if(username.equals("kelompok18") && password.equals("12345")){
+            if(level == 1){
+                Tabbed tab = new Tabbed(); 
             
-            String info[] = null;
-            info[0] = username;
+                tab.setVisible(true);
+                this.setVisible(false);
+            }
+            else {
+                Guest guest = new Guest(); 
             
-            tab.main(info);
-            tab.setVisible(true);
-            this.setVisible(false);
+                guest.setVisible(true);
+                this.setVisible(false);
+                dispose();
+            }
         }
         else {
             JOptionPane.showMessageDialog(null, "Username atau password salah");
@@ -176,7 +180,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
